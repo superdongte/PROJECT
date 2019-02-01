@@ -31,6 +31,9 @@
       </c:forEach>
     </tbody>
   	</table>
+  	<div>
+  	<a href="insertPro">등록</a>
+  	</div>
 	</div>
 		<%-- <div class="box-footer">
 			<div class="text-center">

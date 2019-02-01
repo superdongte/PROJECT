@@ -56,7 +56,7 @@ public class ProjectController {
 		service.update(pro);
 		return "redirect:/pro/listPro";
 	}
-	@RequestMapping(value="delete", method=RequestMethod.GET)
+	@RequestMapping(value="delete", method=RequestMethod.POST)
 	public String delete(@RequestParam("project_no") int project_no, Model model) {
 		service.delete(project_no);
 		return "redirect:/pro/listPro";

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <section class="content">
 	<div class="row">
 		<div class="col-sm-12">
@@ -23,12 +25,12 @@
 						<div class="form-group">
 							<label>시작날짜</label>
 							<input type="text" name="writer" class="form-control"
-								placeholder="Enter Writer" value="${Project_no.pro_start}" readonly="readonly"> 
+								placeholder="Enter Writer" value="<fmt:formatDate value="${Project_no.pro_start}" pattern="yyyy-MM-dd"/>" readonly="readonly"> 
 						</div>
 						<div class="form-group">
 							<label>종료날짜</label>
 							<input type="text" name="writer" class="form-control"
-								placeholder="Enter Writer" value="${Project_no.pro_end}" readonly="readonly"> 
+								placeholder="Enter Writer" value='<fmt:formatDate value="${Project_no.pro_end}" pattern="yyyy-MM-dd"/>' readonly="readonly"> 
 						</div>
 						<div class="form-group">
 							<label>상태</label>
@@ -57,7 +59,7 @@
 			})
 			$("#btnRemove").click(function(){
 				//#f1(form) attr은 속성값을 바꿀수있음
-				$("#f1").attr("action","remove");
+				$("#f1").attr("action","delete");
 				$("#f1").submit();
 			})
 			$("#btnModify").click(function(){
