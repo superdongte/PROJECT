@@ -59,8 +59,13 @@
 			})
 			$("#btnRemove").click(function(){
 				//#f1(form) attr은 속성값을 바꿀수있음
+				var result = confirm("삭제 하시겠습니까?");
+				if(result){
 				$("#f1").attr("action","delete");
 				$("#f1").submit();
+				}else{
+					return false;
+				}
 			})
 			$("#btnModify").click(function(){
 				$("#f1").attr("action","update");
